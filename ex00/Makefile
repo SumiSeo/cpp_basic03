@@ -1,10 +1,10 @@
 NAME = claptrap
 
-SRC = main.cpp ClaTrap.cpp
+SRC = main.cpp ClapTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c+=
+CC = c++
 
 CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 

@@ -10,10 +10,10 @@ class ClapTrap
 	std::string name;
 	unsigned int hit_points;
 	unsigned int energy_points;
-	unsigned int attact_damage;
+	unsigned int attack_damage;
 
   public:
-	ClapTrap(void);
+	ClapTrap(std::string name);
 	~ClapTrap(void);
 	ClapTrap(const ClapTrap &original);
 	ClapTrap &operator=(const ClapTrap &original);
