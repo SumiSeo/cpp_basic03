@@ -11,5 +11,14 @@ int	main(void)
 	vi.attack("Powder");
 	powder.takeDamage(3);
 	powder.beRepaired(2);
+	vi.attack("Powder");
+	powder.takeDamage(3);
+	vi.attack("Powder");
+	powder.takeDamage(3);
+	vi.attack("Powder");
+	powder.takeDamage(3);
+	vi.attack("Powder");
+	powder.takeDamage(3);
+	vi.attack("Powder");
 	return (0);
 }

@@ -3,18 +3,17 @@
 ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
-	std::cout << "Claptrap " << this->name << " crated" << std::endl;
+	std::cout << "Claptrap " << this->name << " was created" << std::endl;
 	this->hit_points = 10;
 	this->energy_points = 10;
-	this->attack_damage = 10;
+	this->attack_damage = 0;
 };
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Claptrap " << this->name << " destoryed" << std::endl;
+	std::cout << "Claptrap " << this->name << " was destoryed" << std::endl;
 };
 ClapTrap::ClapTrap(const ClapTrap &original)
 {
-	// copy operator
 	this->name = original.name;
 	this->hit_points = original.hit_points;
 	this->energy_points = original.energy_points;
@@ -33,15 +32,30 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &original)
 };
 void ClapTrap::attack(const std::string &target)
 {
-	this->energy_points -= -1;
-	std::cout << this->name << " attacks " << target << " causing " << this->attack_damage << " points of damage !" << std::endl;
+	if (this->energy_points > 0)
+	{
+		this->energy_points -= -1;
+		std::cout << this->name << " attacks " << target << " causing " << this->attack_damage << " points of damage !" << std::endl;
+	}
 };
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	this->attack_damage -= amount;
+	if (this->hit_points <= 0)
+	{
+		std::cout << this->name << " can not died again" << std::endl;
+	}
+	else
+	{
+		this->hit_points -= amount;
+		std::cout << this->name << " was damaged causing " << amount << " points of damage !" << std::endl;
+	}
 };
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	this->energy_points -= -1;
-	this->hit_points += amount;
+	if (this->energy_points > 0)
+	{
+		this->energy_points -= -1;
+		this->hit_points += amount;
+		std::cout << this->name << " was repaired " << amount << " points of damage !" << std::endl;
+	}
 };
