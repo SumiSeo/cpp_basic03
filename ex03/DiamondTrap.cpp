@@ -41,7 +41,4 @@ void DiamondTrap::whoAmI(void)
 	std::cout << "Who am I function called" << std::endl;
 	std::cout << "DiamondTrap NAME : " << this->name << std::endl;
 	std::cout << "ClapTrap NAME : " << ClapTrap::name << std::endl;
-	std::cout << ClapTrap::hit_points << std::endl;
-	std::cout << ScavTrap::energy_points << std::endl;
-	std::cout << ClapTrap::attack_damage << std::endl;
 };
